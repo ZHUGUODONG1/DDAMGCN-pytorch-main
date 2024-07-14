@@ -1,15 +1,15 @@
 ## DDAMGCN-pytorch-main    itle 
 
-## Title
+## 1. Title
 
 ### Multiscale Spatio-Temporal Graph Convolutional Networks with Dynamic Delay Awareness for Traffic Forecasting
 
-## Framework
+## 2. Framework
 ![image](Fig2.png) 
 
-## The code will be uploaded soon
+## 3. The code will be uploaded soon
 
-## File directory description
+## 4. File directory description
 eg:
 
 ```
