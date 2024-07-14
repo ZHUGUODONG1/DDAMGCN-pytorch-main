@@ -1,4 +1,4 @@
-## DDAMGCN-pytorch-main    itle 
+## DDAMGCN-pytorch-main 
 
 ## 1. Title
 
