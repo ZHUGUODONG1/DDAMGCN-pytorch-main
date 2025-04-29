@@ -15,13 +15,11 @@ eg:
 ```
 filetree 
 ├── /data/ 
-├── /lib/
+├── /garage/
 ├── README.md
-├── /logs/
-├── /model/
-│  ├── DDAMGCN.py
-│  ├── train.py
-│  ├── DDAMGCN.yaml
-│  ├── correlation_trend.npy
-└── /saved_models/
+├── model.py
+├── train.py
+├── utils.py
+├── util.py    
+├── pre_get_trend.py
 ```
