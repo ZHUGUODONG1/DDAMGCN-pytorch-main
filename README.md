@@ -5,7 +5,7 @@
 ### Multiscale Spatio-Temporal Graph Convolutional Networks with Dynamic Delay Awareness for Traffic Forecasting
 
 ## 2. Framework
-![image](761.png) 
+![image](Framework.png) 
 
 ## 3. The code will be uploaded soon
 
