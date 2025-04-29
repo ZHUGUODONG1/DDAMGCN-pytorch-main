@@ -6,6 +6,9 @@
 
 ## 2. Framework
 ![image](Framework.png) 
+# Requirements
+python 3
+see requirements.txt
 
 ## 3. Train Commands
 ```
