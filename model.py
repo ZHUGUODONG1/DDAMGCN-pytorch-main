@@ -12,7 +12,7 @@ import random
 from torch.nn import BatchNorm2d, BatchNorm1d, Conv1d, Conv2d, ModuleList, Parameter, LayerNorm
 import util
 
-from utils import MSTGCN, CriticalNodeDelayCalculator  # COGCN
+from utils import MSTGCN, CriticalNodeDelayCalculator 
 
 seed = 42
 torch.manual_seed(seed)
