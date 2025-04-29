@@ -7,7 +7,10 @@
 ## 2. Framework
 ![image](Framework.png) 
 
-## 3. The code will be uploaded soon
+## 3. Train Commands
+...
+python train.py --force True --model  DDAMGCN --k_num  100
+...
 
 ## 4. File directory description
 eg:
