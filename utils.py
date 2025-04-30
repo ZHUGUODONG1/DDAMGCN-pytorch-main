@@ -187,9 +187,9 @@ class CriticalNodeDelayCalculator(nn.Module):
         while t < length:
             selected_x_window = selected_values[:,t:,:]
             x_window = input_data[:, t:, :]
-            critical_node_data=selected_x_window.unsqueeze(3)
+            key_node_data=selected_x_window.unsqueeze(3)
             all_node_data=x_window.unsqueeze(2)
-            R = generalized_cross_correlation(critical_node_data, all_node_data)
+            R = generalized_cross_correlation(key_node_data, all_node_data)
             R=R.squeeze(-1).permute(0,2,3,1)
             R[torch.isnan(R)] = 0
             Aggregated_R=self.linear_layer(R)
