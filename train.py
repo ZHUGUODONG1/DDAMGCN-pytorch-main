@@ -24,7 +24,7 @@ parser.add_argument('--learning_rate',type=float,default=0.001,help='learning ra
 parser.add_argument('--dropout',type=float,default=0.5,help='dropout rate')
 parser.add_argument('--weight_decay',type=float,default=0.0001,help='weight decay rate')
 parser.add_argument('--epochs',type=int,default=200,help='')
-parser.add_argument('--print_every',type=int,default=50,help='')
+parser.add_argument('--print_every',type=int,default=15,help='')
 parser.add_argument('--force', type=str, default=False,help="remove params dir", required=False)
 parser.add_argument('--save',type=str,default='./garage/ShenZhen_City',help='save path')
 parser.add_argument('--expid',type=int,default=1,help='experiment id')
