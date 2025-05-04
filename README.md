@@ -14,9 +14,11 @@ see requirements.txt
 
 ## 3. Train Commands
 ```
-python train.py --force True --model  DDAMGCN --k_num  100
+python train.py --force True --model  DDAMGCN --k_num 50
 ```
-
+```
+python test.py --force True --model  DDAMGCN --k_num 50
+```
 ## 4. File directory description
 eg:
 
