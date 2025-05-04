@@ -62,7 +62,7 @@ def main():
 
     params_path = args.save + "/" + args.model
 
-    engine.model.load_state_dict(torch.load("DDAMGCN_exp1_best_174.pth"))
+    engine.model.load_state_dict(torch.load("DDAMGCN__best_model.pth"))
     
 
     # testing
