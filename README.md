@@ -9,7 +9,6 @@
 
 ### Requirements
 python 3   
-
 see requirements.txt
 
 ## 3. Train Commands
@@ -33,6 +32,7 @@ filetree
 ├── DDAMGCN__best_model.pth
 ├── train.py
 ├── utils.py
-├── util.py    
+├── util.py
 ├── pre_get_trend.py
+├── requirements.txt
 ```
