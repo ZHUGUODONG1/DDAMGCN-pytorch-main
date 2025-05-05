@@ -14,11 +14,11 @@ see requirements.txt
 
 ## 3. Train Commands
 ```
-python train.py --force True --model  DDAMGCN --k_num 50
+python train.py --force True --city ShenZhen_City --model  DDAMGCN --k_num 50
 ```
 ## 4. Test Commands
 ```
-python test.py --force True --model  DDAMGCN --k_num 50
+python test.py --force True --city ShenZhen_City --model  DDAMGCN --k_num 50
 ```
 ## 5. File directory description
 eg:
