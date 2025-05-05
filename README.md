@@ -16,10 +16,11 @@ see requirements.txt
 ```
 python train.py --force True --model  DDAMGCN --k_num 50
 ```
+## 4. Test Commands
 ```
 python test.py --force True --model  DDAMGCN --k_num 50
 ```
-## 4. File directory description
+## 5. File directory description
 eg:
 
 ```
