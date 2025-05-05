@@ -30,6 +30,7 @@ filetree
 ├── README.md
 ├── model.py
 ├── test.py
+├── DDAMGCN__best_model.pth
 ├── train.py
 ├── utils.py
 ├── util.py    
