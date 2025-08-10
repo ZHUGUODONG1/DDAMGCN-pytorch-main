@@ -1,4 +1,4 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
     
 import math
 import numpy as np
@@ -8,8 +8,6 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 import sys
 from torch.nn import BatchNorm2d, Conv1d, Conv2d, Conv3d, ModuleList, Parameter, LayerNorm, BatchNorm1d, BatchNorm3d
-
-
 
 class nconv(nn.Module):
     def __init__(self):
@@ -152,21 +150,24 @@ class Key_Node_Identification_Layer(nn.Module):
         X1=self.FC1(input_data.permute(0,3,2,1)).permute(0,3,2,1)
         X2=self.FC2(input_data.permute(0,3,2,1)).permute(0,3,2,1)
         relation_matrix=torch.softmax(torch.matmul(X1, X2.transpose(-1, -2)),dim=-1)
-        normalized_relation_matrix = relation_matrix/torch.sum(relation_matrix, dim=-1, keepdim=True)
-        node_influence = torch.sum(normalized_relation_matrix, dim=-1)
-        top_k_nodes = torch.topk(node_influence, k=self.K, dim=-1).indices.unsqueeze(-1)
-        selected_values = torch.gather(input_data, dim=2, index=top_k_nodes)
+        normalized_relation_matrix = relation_matrix / torch.sum(relation_matrix, dim=-1, keepdim=True)
+        top_k_nodes = torch.topk(normalized_relation_matrix, k=self.K,
+                                   dim=-1).indices  # shape: (batch_size, num_nodes, K)
+
+        expanded_input = input_data.unsqueeze(3).expand(-1, -1, -1, top_k_nodes.size(3), -1)
+        expanded_indices = top_k_nodes.unsqueeze(-1)
+        selected_values = torch.gather(expanded_input, dim=2, index=expanded_indices).squeeze(-1)
         
         return selected_values,top_k_nodes
 
     
 def generalized_cross_correlation(x, y):
 
-    X = torch.fft.fft(x, dim=-1)
-    Y = torch.fft.fft(y, dim=-1)
-    R = torch.fft.ifft(X * torch.conj(Y), dim=-1)
+    X = torch.fft.fft(x, dim=1)
+    Y = torch.fft.fft(y, dim=1)
+    R = torch.fft.ifft(X * torch.conj(Y), dim=1)
     R = torch.real(R)
-    
+
     return R
 
 class Dynamic_Delay_Aware_Module(nn.Module):
@@ -212,12 +213,10 @@ class Dynamic_Delay_Aware_Module(nn.Module):
         t = 0
         delay_all_time=[]
         while t < length:
-            selected_x_window = selected_values[:,t:,:]
+            critical_node_data = selected_values[:, t:, :]
             x_window = input_data[:, t:, :]
-            key_node_data=selected_x_window.unsqueeze(3)
-            all_node_data=x_window.unsqueeze(2)
-            R = generalized_cross_correlation(key_node_data, all_node_data)
-            R=R.squeeze(-1).permute(0,2,3,1)
+            R = generalized_cross_correlation(critical_node_data, x_window)
+            R = R.permute(0, 3, 2, 1)
             R[torch.isnan(R)] = 0
             Aggregated_R=self.linear_layer(R)
             lagc = torch.arange(- (length-t)// 2 + 1, (length-t) // 2 + 1).cuda()
