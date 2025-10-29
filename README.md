@@ -37,3 +37,17 @@ filetree
 ├── pre_get_trend.py
 ├── requirements.txt
 ```
+## Cite
+# If you find this work useful, please cite it as follows.
+```
+@ARTICLE{11219198,
+  author={Zhu, Guodong and Zhang, Xingyi and Niu, Yunyun and Du, Songzhi},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Multiscale Spatiotemporal Graph Convolutional Networks With Dynamic Delay Awareness for Traffic Forecasting}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-15},
+  keywords={Delays;Spatiotemporal phenomena;Computational modeling;Forecasting;Correlation;Convolution;Market research;Data models;Predictive models;Noise;Dynamic delay awareness;graph convolution network (GCN);intelligent transportation system;spatiotemporal data;traffic forecasting},
+  doi={10.1109/TNNLS.2025.3617860}}
+```
