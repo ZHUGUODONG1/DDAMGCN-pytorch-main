@@ -40,7 +40,7 @@ filetree
 ## Cite
 ### If you find this work useful, please cite it as follows.
 ```
-@ARTICLE{11219198,
+@ARTICLE{zhumultiscale,
   author={Zhu, Guodong and Zhang, Xingyi and Niu, Yunyun and Du, Songzhi},
   journal={IEEE Transactions on Neural Networks and Learning Systems}, 
   title={Multiscale Spatiotemporal Graph Convolutional Networks With Dynamic Delay Awareness for Traffic Forecasting}, 
